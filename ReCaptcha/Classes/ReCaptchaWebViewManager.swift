@@ -244,7 +244,7 @@ fileprivate extension ReCaptchaWebViewManager {
     func executeJS(command: JSCommand) {
         guard didFinishLoading else {
             // Hasn't finished loading all the resources
-            return
+          fatalError("Hasn't finished loading all the resources")
         }
 
         webView.evaluateJavaScript(command.rawValue) { [weak self] _, error in
